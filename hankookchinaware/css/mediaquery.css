@@ -1,0 +1,305 @@
+@media screen and (min-width:479px) {
+  #cont2 {
+    margin-top: 40px;
+  }
+
+
+  .foot_info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .foot_menu li::after {
+    display: inline-block;
+    align-self: center;
+    justify-self: center;
+    height: 12px;
+    margin-left: 7px;
+    border-right: 2px solid rgb(145, 145, 145);
+    content: "";
+  }
+
+  .foot_menu li:nth-child(4):after {
+    display: inline-block;
+    height: 13px;
+    border-right: 2px solid transparent;
+    content: "";
+  }
+}
+
+
+@media screen and (min-width:768px) {
+
+  section {
+    margin: 100px 0;
+  }
+
+  #drop_menu {
+    display: none;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    width: 100%;
+  }
+
+
+  #main_menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  #main_menu li {
+    margin-right: 20px;
+  }
+
+  .cont_wrap {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  #cont1 {
+    width: 50%;
+  }
+
+  #cont2 {
+    width: 50%;
+    margin-top: 0;
+  }
+
+  .event_wrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .event_img {
+    position: relative;
+    width: 48%;
+    margin-bottom: 20px;
+    margin-right: 5px;
+    overflow: hidden;
+  }
+
+  .cont5_wrap {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    vertical-align: top;
+  }
+
+  .movie {
+    width: 35%;
+  }
+
+  .store_wrap {
+    width: 32%;
+  }
+
+  .cs_wrap {
+    width: 32%;
+  }
+
+  .cont6_wrap {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .layer_wrap {
+    margin: 3px;
+  }
+
+  .layer_wrap:nth-child(1) {
+    display: flex;
+    width: 30%;
+  }
+
+  .layer_wrap:nth-child(4) {
+    display: flex;
+    width: 30%;
+  }
+
+  .layer_wrap:nth-child(2) {
+    display: flex;
+    width: 68%;
+  }
+
+  .layer_wrap:nth-child(3) {
+    display: flex;
+    width: 68%;
+  }
+
+  .info_btn {
+    margin-right: 10px;
+  }
+
+  .adress {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+}
+
+@media screen and (min-width:1024px) {
+  #head {
+    width: 1000px;
+    margin: 0 auto;
+  }
+
+
+  #main_menu li {
+    margin-right: 20px;
+  }
+
+  #main_menu>li:hover {
+    font-weight: bold;
+    text-decoration: underline;
+    color: #5e8681;
+  }
+
+  .cont_wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1000px;
+  }
+
+  #cont1 {
+    width: 60%;
+  }
+
+  #cont2 {
+    width: 36%;
+  }
+
+  #cont3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cont3_wrap {
+    width: 95%;
+  }
+
+  .event_img {
+    width: 32%;
+  }
+
+  .cont5_wrap {
+    width: 1000px;
+  }
+
+  .movie {
+    width: 30%;
+  }
+
+  .layer_wrap:nth-child(1) {
+    width: 30.5%;
+  }
+
+  .layer_wrap:nth-child(4) {
+    width: 30.5%;
+  }
+
+  .adress {
+    width: 90%;
+    vertical-align: top;
+  }
+
+  .inner_info {
+    width: 60%;
+    margin-bottom: 30px;
+  }
+
+
+  .foot_info_wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .foot_info {
+    width: 100%;
+    margin-left: 10px;
+  }
+
+  .quick {
+    width: 31%;
+  }
+}
+
+@media screen and (min-width:1200px) {
+  #head {
+    width: 1200px;
+  }
+
+  #main_menu li {
+    margin: 0 30px;
+  }
+
+  .cont_wrap {
+    width: 1200px;
+  }
+
+  .cont3_wrap {
+    width: 1200px;
+  }
+
+  .event_img {
+    width: 32%;
+  }
+
+  .cont5_wrap {
+    width: 1200px;
+  }
+
+  .layer_wrap {
+    margin-bottom: 5px;
+  }
+
+  .layer_wrap:nth-child(1) {
+    display: flex;
+    width: 29%;
+  }
+
+  .layer_wrap:nth-child(4) {
+    display: flex;
+    width: 29%;
+  }
+
+  .layer_wrap:nth-child(2) {
+    display: flex;
+    width: 70%;
+  }
+
+  .layer_wrap:nth-child(3) {
+    display: flex;
+    width: 70%;
+  }
+
+  .foot_info {
+    width: 1200px;
+  }
+
+  .adress {
+    width: 1200px;
+  }
+
+  .quick {
+    width: 24%;
+  }
+
+}

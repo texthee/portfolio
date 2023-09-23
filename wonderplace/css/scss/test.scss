@@ -1,0 +1,117 @@
+
+// mixin을 사용한 인자 값 받아서 if문 사용하기 (동그리버튼, 사각이버튼)
+@mixin btn ($size, $radius: 0) {
+  width: $size;
+  height: $size;
+
+  @if $radius !=0 {
+    border-radius: $radius;
+  }
+
+}
+
+.btn-square {
+  @include btn(100px);
+}
+
+.btn-circle {
+  @include btn(100px, $radius: 50%);
+}
+
+@mixin hover {
+  &:hover {
+    font-weight: 700;
+    @content;
+  }
+
+  &.on {
+    @content;
+  }
+}
+
+button {
+  @include hover {
+    color: red;
+  }
+}
+
+// break point 미디어 쿼리 사용할 떄 
+
+$tablet : 768px;
+$mobile: 540px;
+
+@mixin res--tablet {
+  @media screen and (min-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin res--mobile {
+  @media screen and (min-width: #{$mobile}) {
+    @content;
+  }
+}
+
+.title {
+  font-size: 30px;
+
+  @include res--tablet {
+    font-size: 20px;
+  }
+
+  @include res--mobile {
+    font-size: 10px;
+  }
+}
+
+
+// 접근성을 위한 텍스트 표시, 밑줄임 
+@mixin blind {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  white-space: nowrap;
+  clip: rect(0, 0, 0, 0);
+}
+
+@mixin ellipsis($lines: 1) {
+  @if ($lines==1) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+  }
+}
+
+.sns {
+  $_list : facebook, instagram, youtube;
+  $_map : (
+    'facebook' : #d3e6f3,
+    'instagram' : #fff,
+    'youtube' : #333,
+    );
+    
+
+@each $sns in $_list {
+  &.#{$sns} {
+    background-image: url(/wonderplace/imgs/common/#{$sns}.svg);
+  }
+}
+//list 함수는 여러개의 값을 담고 있는 형태 == 배열과 비슷함
+
+
+@each $sns, $color in $_map {
+  &.#{$sns} {
+    background-color: $color;
+  }
+}
+}

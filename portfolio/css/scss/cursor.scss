@@ -1,0 +1,58 @@
+
+.cursor {
+    position: fixed;
+    transform: translate(-50%, -50%);
+    border: 1px solid #fff;
+    padding: 1.6rem;
+    border-radius: 50%;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    opacity: 0;
+    transition: transform 250ms ease, left 60ms linear, top 60ms linear;
+}
+
+.inner-cursor {
+    position: fixed;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 1.6rem;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+    mix-blend-mode: difference;
+    transform-origin: center;
+    transition: transform 250ms ease, left 60ms linear, top 60ms linear;
+    animation: revealCursor 1s ease 5s forwards;
+}
+
+.tit:hover~.cursor {
+    animation: blinkCursor 1s ease infinite;
+    opacity: 1;
+}
+
+.tit:hover~.inner-cursor {
+    transform: translate(-50%, -50%) scale(1.5);
+}
+
+@keyframes blinkCursor {
+    0% {
+        transform: translate(-50%, -50%) scale(1.5);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(2.5);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1.5);
+    }
+}
+
+@keyframes revealCursor {
+    100% {
+        opacity: 1;
+    }
+}
+// cursor
+
+

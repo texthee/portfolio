@@ -1,0 +1,610 @@
+@import url('https://webfontworld.github.io/naver/NanumSquare.css');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+
+* {
+    text-decoration: none;
+    color: inherit;
+    list-style: none;
+}
+
+body {
+    font-family: 'NanumSquare', serif, sans-serif;
+    /* font-family: 'Open Sans', serif, sans-serif;
+    font-family: 'Times New Roman', serif, sans-serif; */
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+p,
+h6,
+h5,
+h4,
+h3,
+h2,
+h1,
+span {
+    transform: rotate(0.03deg);
+}
+
+a {
+    display: block;
+}
+
+input {
+    all: unset;
+}
+
+.blnd {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    white-space: nowrap;
+    clip: rect(0, 0, 0, 0);
+}
+
+header {
+    width: 100%;
+    margin: 0 auto;
+}
+
+#head {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.mySwiper {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.bg {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.m-1 {
+    background-image: url("/acne/images/main-visual/mobile-2.png");
+}
+
+.m-2 {
+    background-image: url("/acne/images/main-visual/mobile-4.png");
+}
+
+.m-3 {
+    background-image: url("/acne/images/main-visual/mobile-3.png");
+}
+
+.m-main {
+    height: 120vw;
+}
+
+.pc-main {
+    display: none;
+}
+
+nav {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0);
+    z-index: 999;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 30px;
+    padding: 20px 30px;
+    background-color:  rgba(255, 255, 255, .5);
+}
+
+.menu.active {
+    background-color: rgba(255, 255, 255, .5);
+}
+
+.menu {
+    font-weight: 700;
+    transition: max-height 0.5s ease-out;
+    cursor: pointer;
+}
+
+.inner-menu {
+    position: absolute; 
+    top: -300px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, .5);
+    opacity: 0;
+}
+
+.inner-menu li {
+    padding: 10px 30px;
+}
+
+.inner-menu li:nth-child(6) {
+    padding-bottom: 25px;
+}
+
+.inner-menu.active {
+    top: 70px;
+    left: 0;
+    z-index: 900;
+    opacity: 1;
+    transition: all .4s cubic-bezier(.8, 0, .33, 1);
+
+}
+
+.inner-menu.active li {
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: .2s linear;
+}
+
+.inner-menu.active li:hover {
+    text-decoration: underline;
+    font-weight: 900;
+    color: #777;
+    opacity: .5;
+}
+
+h1 {
+    position: absolute;
+    width: 80%;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+}
+
+h1 img {
+    width: 100%;
+}
+
+#container-0 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.rotate_image {
+    width: 35%;
+    margin: 60px 0;
+}
+
+.rotate_image img {
+    width: 100%;
+}
+
+.rotate_image > img {
+    animation: rotate_image 6s linear infinite;
+    transform-origin: 50% 50%;
+}
+
+@keyframes rotate_image {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.rotate_image > img:hover {
+    transform: scale(1.2);
+}
+
+#container-1 {
+    margin-bottom: 120px;
+}
+
+.man,
+.woman {
+    display: flex;
+    flex-direction: column;
+}
+
+.man {
+    margin-bottom: 45px;
+}
+
+.man-img,
+.woman-img {
+    height: 30%;
+}
+
+.man-img img,
+.woman-img img {
+    width: 100%;
+}
+
+.man-text,
+.woman-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0;
+}
+
+.man p,
+.woman p {
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.man-text button,
+.woman-text button {
+    background-color: #000;
+    border-radius: 50px;
+    color: #fff;
+    font-weight: 600;
+    padding: 10px 60px;
+    overflow: hidden;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+}
+
+.man-text button:hover,
+.woman-text button:hover {
+    background-color: #fff;
+    border: 2px solid black;
+    color: #000;
+    font-weight: 900;
+}
+
+#container-4,
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#container-2 {
+    width: 100%;
+    margin: 120px 0;
+    overflow: hidden;
+}
+
+.flow-text {
+    display: flex;
+    flex: 0 0 auto;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: 0.3s;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #9D9993;
+}
+
+.flow-text:hover {
+    color: #000;
+}
+
+.flow-text:hover .flow-wrap {
+    animation-play-state: paused;
+    cursor: pointer;
+}
+
+.flow-wrap {
+    animation: textLoop 10s linear infinite;
+    padding-right: 1.4881vw;
+}
+
+@keyframes textLoop {
+    0% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+
+.video {
+    width: 100%;
+    height: 50vw;
+    background-image: url(/acne/images/bg/video-bg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 80px 0;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+}
+
+#container-3 {
+    margin-bottom: 150px;
+    align-items: flex-start;
+}
+
+.imgcard-title {
+    margin: 0 10px;
+    margin-bottom: 30px;
+}
+
+.imgcard-title h2 {
+    margin-bottom: 0;
+    font-weight: lighter;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.188rem;
+    line-height: 1.5;
+}
+
+.imgcard-title h2 span {
+    font-family: 'open-sans';
+    font-weight: 700;
+}
+
+.imgcard-title p {
+    font-weight: 500;
+    font-family: 'NanumSquare';
+}
+
+.imgcard-wrap {
+    width: 100%;
+    overflow: hidden;
+}
+
+.image-card {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+
+.image-card > li {
+    width: 50%;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+}
+
+.image-card > li:hover {
+    width: 100%;
+}
+
+.card-box {
+    position: relative;
+    height: 280px;
+    overflow: hidden;
+    opacity: 1;
+}
+
+.card-box li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 280px;
+    cursor: pointer;
+}
+
+.card-box li a {
+    height: 30px;
+}
+
+.card-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.image_card li:hover .img-hide {
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+#container-4 {
+    width: 100%;
+    margin: 120px 0;
+    overflow: hidden;
+}
+
+.img-container {
+    position: relative;
+    width: 100%;
+    height: 570px;
+    background-image: url(/acne/images/Acne-Studios_SS23_Campaign_Devon-Aoki_1-scaled.jpg);
+    background-position: top 0px right -94px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.placement_content {
+    padding: 0 10px;
+}
+
+.placement_content h4 {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.placement_content a {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.placement_content a:after {
+    display: block;
+    border-bottom: 1.8px solid #333;
+    margin-top: 0.5px;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+    transform-origin: 0% 50%;
+    content: '';
+}
+
+.placement_content a:hover:after {
+    transform: scaleX(1);
+}
+
+.title_content {
+    display: none;
+}
+
+#footer {
+    width: 100%;
+    overflow: hidden;
+}
+
+.foot-bg {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background-image: url("/acne/images/footer/main_bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: .35;
+    z-index: 50;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    padding: 17px 0 63px 0;
+    opacity: 1;
+    z-index: 70;
+}
+
+.input-wrap {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(30%, auto));
+    gap: 30px 20px;
+    width: 80%;
+    margin-top: 40px;
+}
+
+.input-wrap input {
+    border-bottom: 1px solid rgb(255, 255, 255);
+}
+.input-wrap input:nth-of-type(3) {
+    grid-column: 1 / 3;
+}
+
+input::placeholder {
+    color: #fff;
+    font-style: italic;
+    font-weight: 700;
+}
+
+input:focus::placeholder {
+    color: #777;
+}
+
+.foot-btn {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.foot-btn button {
+    all: unset;
+    margin-top: 25px;
+    padding: 6px 40px;
+    background-color: transparent;
+    border-radius: 50px;
+    border: 2px solid #fff;
+    color: #fff;
+    font-weight: 600;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+}
+
+.foot-btn button:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+    padding-top: 18px;
+}
+
+.info > ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.info > ul > li {
+    padding: 10px;
+}
+
+.info > ul > li:nth-child(3) {
+    margin-bottom: 0;
+}
+
+.list li a {
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'NanumSquare';
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.list li a:hover {
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.copy {
+    text-align: center;
+    font-size: 15px;
+    padding: 30px 0;
+}

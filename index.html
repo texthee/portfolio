@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/portfolio/asset/images/favicon/apple-icon.png">
+    <link rel="stylesheet" href="/portfolio/css/reset.css">
+    <link rel="stylesheet" href="/portfolio/css/cursor.css">
+    <link rel="stylesheet" href="/portfolio/css/style.css">
+    <title>MOON SEO HEE PORTFOLIO</title>
+</head>
+
+<body>
+    <div class="loading">
+        <div class="loading-text">
+            <span class="loading-text-words">L</span>
+            <span class="loading-text-words">O</span>
+            <span class="loading-text-words">A</span>
+            <span class="loading-text-words">D</span>
+            <span class="loading-text-words">I</span>
+            <span class="loading-text-words">N</span>
+            <span class="loading-text-words">G</span>
+        </div>
+    </div>
+    <script>
+        const loader = document.querySelector('.loading');
+        const html = document.querySelector('html');
+
+        html.style.overflow = 'hidden';
+
+        window.addEventListener('load', () => {
+
+            setTimeout(() => {
+
+                loader.style.opacity = '0';
+                html.style.overflow = 'auto';
+
+                setTimeout(() => {
+                    window.location.href = "main.html";
+                }, 400);
+
+            }, 4500);
+
+        })
+// loading
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,2330 @@
+@import 'mixin';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/verdana');
+
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Poppins', 'verdana', 'Pretendard-Regular', 'gulim', 'dotum', serif;
+  color: #131313;
+  text-transform: uppercase;
+}
+
+
+body.active {
+  overflow: hidden;
+}
+
+.blnd {
+  @include blind;
+}
+
+.wrapper {
+  position: relative;
+  width: $w;
+  overflow: hidden;
+}
+
+.more {
+  @include flexbox;
+  width: 160px;
+  height: 50px;
+  color: #fff;
+  background-color: $maincolor;
+  border: 1px solid transparent;
+  transition: .2s;
+
+  @include mobile {
+    width: 140px;
+    height: 45px;
+  }
+
+  @include tabletToMobile {
+    width: 150px;
+    height: 45px;
+  }
+
+  span {
+    @include inlineflexbox;
+    justify-content: space-between;
+    width: 120px;
+    font-weight: 700;
+    font-size: 18px;
+
+    @include mobile {
+      width: 100px;
+      font-size: 16px;
+    }
+
+    &::after {
+      content: '';
+      background-color: #fff;
+      width: 25px;
+      height: 3.2px;
+    }
+  }
+
+  &:hover {
+    background-color: #fff;
+    border: 1px solid #131313;
+    color: $maincolor;
+  }
+
+  &:hover span::after {
+    background-color: $maincolor;
+  }
+}
+
+.header {
+  @include flexbox;
+  justify-content: space-between;
+  position: relative;
+  background-color: #fff;
+  width: $w;
+  height: 80px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 990;
+
+  .head {
+    @include flexbox;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    h1 {
+      margin-left: 55px;
+
+      @include mobile {
+        margin-left: 15px;
+      }
+
+      @include tabletToMobile {
+        margin-left: 25px;
+      }
+
+      @include tablet {
+        margin-left: 35px;
+      }
+
+      @include laptopToTablet {
+        margin-left: 45px;
+      }
+
+      @include laptop {
+        margin-left: 45px;
+      }
+
+      @include desktopToLaptop {
+        margin-left: 45px;
+      }
+
+      @include desktop {
+        margin-left: 105px;
+      }
+
+      img {
+        width: $w;
+      }
+    }
+  }
+}
+
+.header.active {
+  width: $w;
+  height: 100vh;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.navi-wrap {
+  @include flexbox;
+  width: $w;
+
+  @include laptop {
+    margin-right: 150px;
+    justify-content: flex-end;
+  }
+
+  @include desktopToLaptop {
+    margin-right: 180px;
+    justify-content: flex-end;
+  }
+
+  @include desktop {
+    margin-right: 200px;
+    justify-content: flex-end;
+  }
+
+}
+
+#navi {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  position: absolute;
+  top: 200px;
+  opacity: 0;
+  transition: .1s ease-in-out;
+  display: none;
+
+  &.active {
+    display: flex;
+    opacity: 1;
+    top: 350px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @include laptopToTablet {
+    width: 85%;
+  }
+
+  @include laptop {
+    width: 75%;
+  }
+
+  @include desktopToLaptop {
+    width: 65%;
+  }
+
+  @include desktop {
+    width: 60%;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    font-weight: 800;
+    font-size: 70px;
+    // margin-left: 20px;
+    color: transparent;
+    -webkit-text-stroke: 1px #131313;
+    transition: .1s;
+
+    li a {
+      @include mobile {
+        font-size: 50px;
+        line-height: 74px;
+      }
+
+      @include tabletToMobile {
+        font-size: 62px;
+        line-height: 85px;
+      }
+
+      @include tablet {
+        font-size: 62px;
+        line-height: 85px;
+      }
+
+      @include laptopToTablet {
+        font-size: 62px;
+        line-height: 85px;
+      }
+
+      @include laptop {
+        font-size: 62px;
+        line-height: 85px;
+      }
+
+      @include desktopToLaptop {
+        font-size: 70px;
+        line-height: 100px;
+      }
+
+      @include desktop {
+        font-size: 70px;
+        line-height: 100px;
+      }
+
+      span {
+        @include inlineflexbox;
+        justify-content: flex-start;
+        position: relative;
+
+        &::after {
+          content: "";
+          display: inline-block;
+          position: absolute;
+          width: 0px;
+          height: 8px;
+          right: -10px;
+          background-color: $maincolor;
+          transition: .2s;
+          opacity: 0;
+        }
+      }
+
+      &:hover {
+        color: $maincolor;
+      }
+
+      &:hover span::after {
+        opacity: 1;
+        right: -30px;
+        width: 20px;
+      }
+    }
+  }
+
+  p {
+    display: block;
+    text-align: end;
+    line-height: 1.7;
+    font-size: 24px;
+
+    @include mobile {
+      display: none;
+    }
+
+    @include tabletToMobile {
+      display: none;
+    }
+
+    span {
+      font-weight: 200;
+      display: block;
+
+      &:nth-of-type(2) {
+        opacity: .9;
+      }
+    }
+
+    strong {
+      font-weight: bolder;
+    }
+  }
+}
+
+.pc-menu {
+  @include mobile {
+    display: none;
+  }
+
+  @include tabletToMobile {
+    display: none;
+  }
+
+  @include tablet {
+    display: none;
+  }
+
+  @include laptopToTablet {
+    display: none;
+  }
+
+  @include inlineflexbox;
+  justify-content: space-between;
+  width: auto;
+
+  li {
+    margin: 0 20px;
+
+    @include desktopToLaptop {
+      margin: 0 30px;
+    }
+
+    @include desktop {
+      margin: 0 35px;
+    }
+
+    a {
+      position: relative;
+      padding: 0;
+      font-size: 18px;
+      font-weight: 600;
+      color: #131313;
+      line-height: 40px;
+      letter-spacing: -1px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 30px;
+        left: 0;
+        right: 100%;
+        height: 3px;
+        background: transparent;
+        pointer-events: none;
+        transition: 0.4s;
+        -webkit-transition: 0.4s;
+      }
+
+      &:hover::after {
+        right: 0;
+        background-color: #131313;
+        pointer-events: unset;
+      }
+    }
+  }
+}
+
+.pc-menu.active {
+  display: none;
+}
+
+.gnb-btn {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+  position: absolute;
+  right: 55px;
+  top: 0;
+  z-index: 99;
+  width: 40px;
+  height: $h;
+  color: #131313;
+  opacity: 1;
+  cursor: pointer;
+
+  @include desktop {
+    right: 100px;
+  }
+
+  @include mobile {
+    right: 15px;
+  }
+
+  @include tabletToMobile {
+    right: 25px;
+  }
+
+  @include tablet {
+    margin-left: 35px;
+  }
+
+  i {
+    display: inline-block;
+    vertical-align: middle;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 20px;
+    height: 3px;
+    margin-top: -1px;
+    margin-left: -10px;
+    background-color: currentColor;
+    transition: 0.2s;
+    -webkit-transition: 0.2s;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -8px;
+      height: 3px;
+      background-color: currentColor;
+      transition: 0.3s;
+      -webkit-transition: 0.3s;
+    }
+
+    &::after {
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      position: absolute;
+      left: 50%;
+      right: 0;
+      bottom: -8px;
+      height: 3px;
+      background-color: currentColor;
+      transition: 0.3s;
+      -webkit-transition: 0.3s;
+    }
+  }
+
+  &:hover i::after {
+    left: 0%;
+  }
+}
+
+.gnb-btn.active {
+  top: 0;
+
+  i {
+    background-color: transparent;
+
+    &::before {
+      left: -2px;
+      right: -2px;
+      top: 0;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      left: -2px;
+      right: -2px;
+      bottom: 0;
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+aside {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  width: $w;
+  height: 100px;
+  position: fixed;
+  bottom: 224px;
+  right: 400px;
+  z-index: 998;
+  // display: none;
+  left: 0;
+
+  @include mobile {
+    bottom: 0;
+    right: 0;
+  }
+
+  @include tabletToMobile {
+    right: 20px;
+  }
+
+  @include tablet {
+    right: 32px;
+  }
+
+  @include laptopToTablet {
+    right: 60px;
+  }
+
+  @include laptop {
+    right: 117px;
+  }
+
+  @include desktopToLaptop {
+    right: 260px;
+  }
+
+  .sns-wrap {
+    @include flexbox;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    width: 120px;
+    
+    &.active {
+      display: none;
+    }
+
+    @include mobile {
+      display: none;
+    }
+
+    @include tabletToMobile {
+      display: none;
+    }
+
+    @include tablet {
+      display: none;
+    }
+
+    @include laptopToTablet {
+      left: 15px;
+    }
+
+    @include laptop {
+      left: 20px;
+    }
+
+    @include desktopToLaptop {
+      left: 30px;
+    }
+
+    @include desktop {
+      left: 40px;
+    }
+
+    a {
+      margin-bottom: 10px;
+    }
+
+    a {
+      width: $w;
+      height: $h;
+      vertical-align: middle;
+      overflow: hidden;
+
+      i {
+        @include bg-name($path: "/wonderplace/imgs/common/", $name: "icon_sns", $format: 'svg');
+        background-position: initial;
+        background-size: 200% auto;
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        transition: .2s;
+      }
+
+      .facebook {
+        background-position: left top;
+      }
+
+      .instagram {
+        background-position: left;
+      }
+
+      .youtube {
+        background-position: left bottom;
+      }
+
+      &:hover .facebook {
+        @include snshover;
+        background-position: right top;
+      }
+
+      &:hover .instagram {
+        @include snshover;
+        background-position: right;
+      }
+
+      &:hover .youtube {
+        @include snshover;
+        background-position: right bottom;
+      }
+    }
+  }
+
+  .bottom-btn {
+    opacity: 0;
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    cursor: pointer;
+
+    i {
+      width: 0.8px;
+      height: 45px;
+      position: absolute;
+      top: 180px;
+      right: 20px;
+      display: inline-block;
+      background-color: $maincolor;
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: -7px;
+        bottom: 3px;
+        width: 15px;
+        height: 15px;
+        transform: rotate(135deg);
+        border-right: 1px solid #131313;
+      }
+
+      @include mobile {
+        top: -18px;
+        right: 10px;
+      }
+    }
+  }
+
+  .bottom-btn.active {
+    opacity: 1;
+    right: 0;
+
+    @include laptop {
+      right: 22px;
+    }
+
+    @include desktopToLaptop {
+      right: 45px;
+    }
+
+    @include desktop {
+      right: 75px;
+    }
+  }
+
+  .top-btn {
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-color: $maincolor;
+    margin-right: 20px;
+    z-index: 888;
+    transition: .2s ease-in;
+    opacity: 0;
+    cursor: pointer;
+
+    @include tabletToMobile {
+      margin-right: 60px;
+    }
+
+    @include tablet {
+      margin-right: 60px;
+      width: 50px;
+      height: 50px;
+    }
+
+    @include laptopToTablet {
+      margin-right: 50px;
+      width: 50px;
+      height: 50px;
+    }
+
+    @include laptop {
+      margin-right: 50px;
+      width: 60px;
+      height: 60px;
+    }
+
+    @include desktopToLaptop {
+      margin-right: 60px;
+      width: 60px;
+      height: 60px;
+    }
+
+    @include desktop {
+      margin-right: 70px;
+      width: 70px;
+      height: 70px;
+    }
+
+    i {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 13px;
+      height: 13px;
+      margin-left: -7px;
+      margin-top: -3px;
+      border: 1px solid #fff;
+      transform: rotate(45deg);
+      border-bottom: 0;
+      border-right: 0;
+    }
+  }
+
+  .top-btn.on {
+    z-index: 900;
+    opacity: 1;
+  }
+
+  .top-btn.active {
+    display: none;
+  }
+}
+
+/* END header */
+
+.main {
+  width: $w;
+  margin-top: $m;
+  position: relative;
+  height: 62.5rem;
+  //1000
+  padding-top: 250px;
+  overflow: hidden;
+
+  @include mobile {
+    height: 34.375rem;
+    //550
+    padding-top: 100px;
+  }
+
+  @include tabletToMobile {
+    height: 53.125rem;
+    //850
+    padding-top: 100px;
+  }
+
+  @include tablet {
+    height: 68.75rem;
+    //1100
+    padding-top: 100px;
+  }
+
+  @include laptopToTablet {
+    height: 75rem;
+    //1300
+    padding-top: 100px;
+  }
+
+  @include laptop {
+    padding-top: 200px;
+  }
+
+  @include desktopToLaptop {
+    height: 68.75rem;
+    //1100
+    padding-top: 250px;
+  }
+
+  @include desktop {
+    height: 81.25rem;
+    //1300
+    padding-top: 250px;
+  }
+
+  .wrap {
+    @include flexbox;
+    flex-direction: column-reverse;
+    position: relative;
+
+    .main-bg {
+      display: flex;
+      flex-direction: column-reverse;
+      transition: .2s ease-in-out;
+      overflow: hidden;
+      width: 86%;
+      margin-top: 20px;
+      position: absolute;
+      top: -100px;
+
+      .bg {
+        .item {
+          @include bg;
+          color: transparent;
+          height: 700px;
+
+          @include mobile {
+            height: 300px;
+            background-position: top 0 right 27%;
+          }
+
+          @include tabletToMobile {
+            height: 360px;
+            background-position: top 0 right 27%;
+          }
+
+          @include tablet {
+            height: 550px;
+            background-position: top 0 right 27%;
+          }
+
+          @include laptopToTablet {
+            height: 600px;
+            background-position: top 0 right 27%;
+          }
+
+          @include laptop {
+            height: 600px;
+            background-position: top 0 right 27%;
+          }
+
+        }
+      }
+
+      .bg-1 {
+        .item {
+          @include bg-name('bg01', '/wonderplace/imgs/hero/');
+        }
+      }
+
+      .bg-2 {
+        .item {
+          @include bg-name('bg02', '/wonderplace/imgs/hero/');
+        }
+      }
+
+      .bg-3 {
+        .item {
+          @include bg-name('bg03', '/wonderplace/imgs/hero/');
+        }
+      }
+
+      .prev,
+      .next {
+        display: block;
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        background-color: #131313;
+        z-index: 800;
+        top: 200px;
+        cursor: pointer;
+
+        @include mobile {
+          display: none;
+          opacity: 0;
+        }
+
+        @include tabletToMobile {
+          display: none;
+          opacity: 0;
+        }
+
+        @include tablet {
+          top: 360px;
+        }
+
+        @include laptopToTablet {
+          top: 379px;
+        }
+      }
+    }
+
+    .prev {
+      right: 250px;
+
+      @include mobile {
+        opacity: 0;
+        display: none;
+      }
+
+      @include tabletToMobile {
+        opacity: 0;
+        display: none;
+      }
+
+      @include tablet {
+        right: 144px;
+      }
+
+      @include laptopToTablet {
+        right: 224px;
+      }
+
+      @include laptop {
+        right: 170px;
+      }
+
+
+
+      &::before {
+        left: calc(50% - 5px);
+        transform: rotate(225deg);
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        position: absolute;
+        top: calc(50% - 12px);
+        box-sizing: border-box;
+        width: 24px;
+        height: 24px;
+        border-top: #fff solid 2px;
+        border-right: #fff solid 2px;
+        border-radius: 2px;
+        opacity: 1;
+        transition: 0.2s;
+        -webkit-transition: 0.2s;
+      }
+    }
+
+    .next {
+      right: 170px;
+
+      @include mobile {
+        display: none;
+      }
+
+      @include tabletToMobile {
+        display: none;
+      }
+
+      @include tablet {
+        right: 64px;
+      }
+
+      @include laptopToTablet {
+        right: 144px;
+      }
+
+      @include laptop {
+        right: 90px;
+      }
+
+
+      &::before {
+        left: calc(50% - 20px);
+        transform: rotate(45deg);
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        position: absolute;
+        top: calc(50% - 12px);
+        box-sizing: border-box;
+        width: 24px;
+        height: 24px;
+        border-top: #fff solid 2px;
+        border-right: #fff solid 2px;
+        border-radius: 2px;
+        opacity: 1;
+        transition: 0.2s;
+        -webkit-transition: 0.2s;
+      }
+    }
+
+    .main-text {
+      position: absolute;
+      top: -83px;
+      left: 300px;
+
+      @include mobile {
+        top: -79px;
+        left: 85px;
+      }
+
+      @include tabletToMobile {
+        top: -80px;
+        left: 112px;
+      }
+
+      @include tablet {
+        top: -110px;
+        left: 140px;
+      }
+
+      @include laptopToTablet {
+        top: -84px;
+        left: 200px;
+      }
+
+      @include laptop {
+        top: -100px;
+        left: 210px;
+      }
+
+      @include desktopToLaptop {
+        top: -95px;
+        left: 300px;
+      }
+
+      @include desktop {
+        top: -95px;
+        left: 375px;
+      }
+
+      ul {
+        li {
+          font-weight: 200;
+          font-size: 70px;
+          line-height: 105px;
+
+          @include mobile {
+            line-height: 1.9;
+            font-size: 20px;
+          }
+
+          @include tabletToMobile {
+            font-size: 38px;
+            line-height: 1.35;
+          }
+
+          @include tablet {
+            font-size: 50px;
+            line-height: 1.35;
+          }
+
+          @include laptopToTablet {
+            font-size: 50px;
+            line-height: 65px;
+          }
+
+          &:nth-child(3),
+          &:nth-child(4) {
+            font-weight: bold;
+          }
+
+          &:nth-child(4) {
+            font-size: 16px;
+            margin: 40px 0 30px 0;
+            line-height: normal;
+
+            @include mobile {
+              margin-top: 10px;
+              margin-bottom: 25px;
+              font-size: 14px;
+            }
+
+            @include tabletToMobile {
+              margin-top: 12px;
+              margin-bottom: 25px;
+              font-size: 14px;
+            }
+
+            @include tablet {
+              margin: 30px 0;
+              margin-bottom: 25px;
+              font-size: 14px;
+            }
+          }
+
+          &:nth-child(5) {
+            font-weight: 200;
+            font-size: 17px;
+            line-height: 1.8;
+            width: 70%;
+
+            @include mobile {
+              display: none;
+            }
+
+            @include tabletToMobile {
+              display: none;
+            }
+
+            @include tablet {
+              display: block;
+              width: 80%;
+              font-size: 15px;
+            }
+
+            @include laptop {
+              display: block;
+              width: 50%;
+              font-size: 16px;
+            }
+
+            @include desktopToLaptop {
+              display: block;
+              width: 50%;
+              font-size: 17px;
+            }
+
+            @include desktop {
+              display: block;
+              width: 50%;
+              font-size: 17px;
+            }
+          }
+        }
+      }
+    }
+
+    .bn-controller {
+      margin-bottom: 100px;
+      cursor: pointer;
+
+
+      @include mobile {
+        margin-bottom: 65px;
+        margin-top: 0;
+      }
+
+      @include tabletToMobile {
+        margin-bottom: 75px;
+        margin-top: 0;
+      }
+
+      @include tablet {
+        margin-bottom: 280px;
+        margin-top: 0;
+      }
+
+      @include laptopToTablet {
+        margin-bottom: 280px;
+        margin-top: 0;
+      }
+
+      .slide-banner {
+        .bn-item {
+          font-size: 23px;
+          line-height: 2;
+
+          @include mobile {
+            font-size: 16.5px;
+            line-height: 2;
+          }
+
+          @include tabletToMobile {
+            font-size: 17px;
+            line-height: 2.7;
+          }
+
+          @include tablet {
+            font-size: 20px;
+            line-height: 2;
+          }
+
+          &::before {
+            content: '';
+            display: inline-block;
+            vertical-align: middle;
+            width: 8.5px;
+            height: 3.3px;
+            margin-right: 8px;
+            background-color: #999;
+            transition: .3s;
+          }
+        }
+      }
+
+      li.slick-active .bn-item {
+        font-weight: 700;
+      }
+
+      li.slick-active .bn-item:before {
+        background-color: $maincolor;
+        width: 18px;
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+/* END main */
+
+.cont {
+  @include flexbox;
+  flex-direction: column;
+  width: $w;
+  // margin-top: 180px;
+
+  .wrap {
+    flex-direction: column;
+    width: 90%;
+
+    @include tablet {
+      width: 85%;
+    }
+
+    @include desktopToLaptop {
+      width: 75%;
+    }
+
+    @include desktop {
+      width: 60%;
+    }
+
+    .sub-tit {
+      width: $w;
+
+      li {
+        &:nth-child(1) {
+          font-weight: 700;
+          letter-spacing: -2.5px;
+          line-height: 1.4;
+          margin-bottom: 20px;
+          font-size: 45px;
+
+          @include mobile {
+            font-size: 30px;
+          }
+
+          @include tabletToMobile {
+            font-size: 30px;
+          }
+
+          @include tablet {
+            font-size: 35px;
+          }
+
+          @include laptop {
+            font-size: 45px;
+          }
+
+          @include desktopToLaptop {
+            font-size: 60px;
+          }
+
+          span {
+            display: block;
+            letter-spacing: 4.5px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            font-size: 1rem;
+          }
+        }
+
+        &:nth-child(2) {
+          line-height: 1.6;
+          letter-spacing: -1px;
+
+          @include laptopToTablet {
+            margin: 50px 0;
+          }
+
+          @include laptop {
+            margin: 50px 0;
+            width: 60%;
+            font-size: 18px;
+          }
+
+          @include desktopToLaptop {
+            margin: 80px 0;
+            width: 50%;
+            font-size: 18px;
+          }
+
+          @include desktop {
+            margin: 80px 0;
+            width: 50%;
+            font-size: 18px;
+          }
+
+          span {
+            @include tabletToMobile {
+              display: block;
+            }
+          }
+        }
+
+        &:nth-child(3) {
+          @include mobile {
+            margin: 30px 0 80px 0;
+          }
+
+          @include tabletToMobile {
+            margin: 50px 0 120px 0;
+          }
+
+          @include tablet {
+            margin: 50px 0 100px 0;
+          }
+
+        }
+      }
+    }
+
+    .about-img {
+      @include flexbox;
+      width: 45%;
+
+      @include mobile {
+        width: $w;
+      }
+
+      @include tabletToMobile {
+        width: 70%;
+      }
+
+      @include tablet {
+        width: 60%;
+      }
+
+      @include laptopToTablet {
+        width: 45%;
+      }
+
+      @include laptop {
+        width: 80%;
+      }
+
+      @include desktopToLaptop {
+        width: 85%;
+      }
+
+      @include desktop {
+        width: 80%;
+      }
+
+      img {
+        width: $w;
+      }
+    }
+  }
+
+  .cont1-wrap,
+  .cont4-wrap {
+    @include flexbox;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @include mobile {
+      flex-direction: column;
+    }
+
+    @include tabletToMobile {
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    @include tablet {
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .sub-tit {
+      @include laptopToTablet {
+        width: 50%;
+      }
+
+    }
+  }
+}
+
+/* END cont1 */
+
+.flow-container {
+  position: relative;
+  height: 55vh;
+
+  @include mobile {
+    margin: 100px 0;
+    height: 30vh;
+  }
+
+  @include tabletToMobile {
+    margin: 150px 0;
+    height: 30vh;
+
+  }
+
+  @include tablet {
+    margin: 200px 0;
+    height: 30vh;
+
+  }
+
+  @include laptopToTablet {
+    margin: 180px 0;
+    height: 30vh;
+
+  }
+
+  @include desktop {
+    margin-bottom: 350px;
+  }
+
+  .flow-wrap {
+    @include flexbox;
+    flex-direction: column;
+
+    width: $w;
+    height: 100%;
+
+    .flow {
+      position: relative;
+
+      p {
+        overflow: visible;
+        line-height: 0.83;
+        white-space: nowrap;
+        color: #131313;
+        font-weight: 400;
+        font-size: 150px;
+        opacity: 0.1;
+
+        &:nth-of-type(1) {
+          z-index: 5;
+          top: 0;
+          right: -1200px;
+        }
+
+        @include mobile {
+          font-size: 130px;
+        }
+
+        @include tabletToMobile {
+          font-size: 130px;
+        }
+      }
+    }
+
+    .flow-1 {
+      p {
+        top: auto;
+        right: 0;
+        left: -1000px;
+        bottom: -55px;
+
+        @include mobile {
+          bottom: 0;
+        }
+
+        @include tabletToMobile {
+          bottom: 0;
+        }
+
+        opacity: 0.3;
+        color: transparent;
+        -webkit-text-stroke: 1px #131313;
+      }
+    }
+  }
+}
+
+/* END cont2 */
+
+.cont3 {
+
+  @include desktopToLaptop {
+    margin-bottom: 200px;
+  }
+
+  @include desktop {
+    margin-bottom: 200px;
+  }
+
+  .wrap {
+    @include desktopToLaptop {
+      width: $w;
+    }
+
+    @include desktop {
+      width: $w;
+    }
+
+    .sub-wrap {
+      @include flexbox;
+
+      .sub-tit {
+
+        @include laptop {
+          display: flex;
+          justify-content: space-between;
+          // margin-bottom: 65px;
+        }
+
+        @include desktopToLaptop {
+          display: flex;
+          justify-content: space-between;
+          // margin-bottom: 65px;
+          width: 75%;
+
+        }
+
+        @include desktop {
+          display: flex;
+          justify-content: space-between;
+          width: 75%;
+        }
+      }
+    }
+
+    .brand-bg {
+      margin-top: 50px;
+
+      .bg-wrap {
+        animation-timing-function: linear;
+        transition: .3s;
+
+        @include desktop {
+          width: 80%;
+        }
+
+        &::before {
+          @include mobile {
+            display: none;
+          }
+
+          @include tabletToMobile {
+            display: none;
+          }
+
+          @include tablet {
+            left: -4.8vw;
+          }
+
+          @include laptop {
+            left: 0vw;
+            top: -4vh;
+          }
+
+          @include desktopToLaptop {
+            left: 4.5vw;
+            top: -4vh;
+          }
+
+          @include desktop {
+            left: -1.5vw;
+            top: -4vh;
+          }
+
+          content: 'BRANDS';
+          position: absolute;
+          top: -11vh;
+          z-index: 2;
+          height: 22vh;
+          font-size: 20svh;
+          font-weight: 700;
+          line-height: 23vh;
+          opacity: 0.2;
+          color: transparent;
+          -webkit-text-stroke: 1px #fff;
+          transform: translateY(-50%) rotate(90deg);
+          transform-origin: bottom left;
+          pointer-events: none;
+        }
+
+        .bg {
+          @include bg;
+          height: 80vh;
+          position: relative;
+
+          .item-txt {
+            position: absolute;
+            bottom: 85px;
+            color: #fff;
+            width: 80%;
+            top: auto;
+            right: 8%;
+
+            @include mobile {
+              padding-left: 25px;
+            }
+
+            @include tabletToMobile {
+              padding-left: 50px;
+            }
+
+            @include tablet {
+              padding-left: 50px;
+              left: 0;
+              width: 52%;
+              top: 140px;
+            }
+
+            @include laptop {
+              right: 3%;
+            }
+
+            @include desktop {
+              right: 3%;
+            }
+
+
+            h4 {
+              font-weight: 700;
+              font-size: $lfont;
+              margin-bottom: 30px;
+
+              strong {
+                display: block;
+                line-height: 1.6;
+                font-size: $smfont;
+                margin-bottom: 55px;
+
+                @include mobile {
+                  margin-bottom: 20px;
+                }
+
+                @include tabletToMobile {
+                  margin-bottom: 20px;
+                }
+
+                @include tablet {
+                  margin-bottom: 55px;
+                }
+              }
+            }
+
+            p {
+              line-height: 1.7;
+              font-size: $smfont;
+              width: 60%;
+
+              @include laptop {
+                width: 30%;
+              }
+
+              @include desktopToLaptop {
+                width: 30%;
+              }
+
+              @include desktop {
+                width: 30%;
+              }
+            }
+
+            .more {
+              background-color: #fff;
+              margin-top: 100px;
+
+              @include mobile {
+                margin-top: 30px;
+              }
+
+              @include tabletToMobile {
+                margin-top: 30px;
+              }
+
+              &:hover {
+                background-color: transparent;
+                border: 1px solid #fff;
+                color: #fff;
+              }
+
+              &:hover button span::after {
+                background-color: #fff;
+              }
+            }
+          }
+        }
+
+        .item-1 {
+          @include bg-name('bg_gola', '/wonderplace/imgs/brand/');
+          background-position: top 0 left 42%;
+
+          .more {
+            color: #0f1b27;
+
+            span {
+              &::after {
+                background-color: currentColor;
+              }
+            }
+          }
+        }
+
+        .item-2 {
+          @include bg-name('bg_comoninoz', '/wonderplace/imgs/brand/');
+          background-position: top 0 left 55%;
+
+          .more {
+            color: #161422;
+
+            span {
+              &::after {
+                background-color: currentColor;
+              }
+            }
+          }
+        }
+
+        .item-3 {
+          @include bg-name('bg_w.standard', '/wonderplace/imgs/brand/');
+          background-position: top 0 left 50%;
+
+          .more {
+            color: #646a57;
+
+            span {
+              &::after {
+                background-color: currentColor;
+              }
+            }
+          }
+        }
+
+        .item-4 {
+          @include bg-name('bg_deliccent', '/wonderplace/imgs/brand/');
+          background-position: top 0 left 55%;
+
+          .more {
+            color: #51426e;
+
+            span {
+              &::after {
+                background-color: currentColor;
+              }
+            }
+          }
+        }
+
+        .item-5 {
+          @include bg-name('bg_outdoor_products', '/wonderplace/imgs/brand/');
+          background-position: top 0 left 32%;
+
+          .more {
+            color: #878168;
+
+            span {
+              &::after {
+                background-color: currentColor;
+              }
+            }
+          }
+        }
+
+        .item-6 {
+          @include bg-name('bg_ordinary_holiday', '/wonderplace/imgs/brand/');
+          background-position: top 0 left 48%;
+
+          .more {
+            color: #877c98;
+
+            span {
+              &::after {
+                background-color: currentColor;
+              }
+            }
+          }
+        }
+
+        .item-7 {
+          @include bg-name('bg_field_worker', '/wonderplace/imgs/brand/');
+          background-position: top 0 left 74%;
+
+          .more {
+            color: #7e7f7a;
+
+            span {
+              &::after {
+                background-color: currentColor;
+              }
+            }
+          }
+        }
+
+        .pg-controller {
+          @include flexbox;
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          width: 50%;
+          right: 85px;
+
+          @include mobile {
+            flex-direction: row;
+            width: $w;
+            right: 0;
+            bottom: 30px;
+          }
+
+          @include tablet {
+            flex-direction: row;
+            width: $w;
+            right: 0;
+            bottom: 30px;
+          }
+
+          @include tabletToMobile {
+            flex-direction: row;
+            width: $w;
+            right: 0;
+            bottom: 30px;
+          }
+
+          @include laptopToTablet {
+            right: 79px;
+            top: 262px;
+          }
+
+          @include laptop {
+            right: 100px;
+            top: 282px;
+          }
+
+          @include desktopToLaptop {
+            right: 200px;
+            top: 282px;
+          }
+
+          @include desktop {
+            right: 280px;
+            top: 282px;
+          }
+
+
+          li {
+            @include inlineflexbox;
+            flex-direction: row-reverse;
+            margin-bottom: 20px;
+            color: rgba($color: #fff, $alpha: 0.5);
+
+            &::before {
+              content: '';
+              display: inline-block;
+              background-color: #fff;
+              opacity: .5;
+              width: 7px;
+              height: 3.8px;
+              margin-left: 10px;
+              transition: .3s;
+              cursor: pointer;
+            }
+
+            @include mobile {
+              margin-right: 10px;
+
+              &:nth-child(7) {
+                margin-right: 0;
+              }
+
+            }
+
+            @include tabletToMobile {
+              margin-right: 10px;
+
+              &:nth-child(7) {
+                margin-right: 0;
+              }
+            }
+
+            .pg {
+              // color: rgba($color: #fff, $alpha: 0.5);
+              font-weight: 600;
+              font-size: 15px;
+
+              @include mobile {
+                @include blind;
+              }
+
+              @include tablet {
+                @include blind;
+              }
+
+              @include tabletToMobile {
+                @include blind;
+              }
+            }
+          }
+
+          li.slick-active {
+            color: #fff;
+
+            &::before {
+              opacity: 1;
+              width: 20px;
+            }
+          }
+        }
+      }
+
+      @include desktop {
+        @include flexbox;
+      }
+    }
+  }
+}
+
+/* END cont3 */
+
+.cont4 {
+  margin-top: 0;
+  background-color: #f5f5f5;
+  padding: 150px 0;
+
+  @include mobile {
+    padding: 100px 0;
+  }
+
+  @include tabletToMobile {
+    padding: 120px 0;
+  }
+
+  .wrap {
+    align-items: flex-start;
+
+    @include laptop {
+      width: 80%;
+    }
+
+    .pc-info-wrap {
+      width: 80%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column-reverse;
+
+      .info-wrap {
+        display: block;
+
+        @include mobile {
+          display: none;
+        }
+
+        @include tabletToMobile {
+          display: none;
+        }
+
+        @include tablet {
+          display: none;
+        }
+
+        p {
+          font-size: $smfont;
+          line-height: 2;
+          margin: 50px 0;
+          font-size: 17px;
+
+          span {
+            display: block;
+            margin-top: 30px;
+          }
+        }
+
+        .more {
+          width: 200px;
+
+          span {
+            width: 160px;
+          }
+        }
+      }
+
+      .sub-tit {
+        width: 80%;
+
+        ul {
+          li {
+            &:nth-child(1) {
+              font-size: 38px;
+
+              @include mobile {
+                font-size: 25px;
+                margin-bottom: 50px;
+              }
+
+              @include tablet {
+                font-size: 30px;
+                margin-bottom: 50px;
+              }
+
+              @include tabletToMobile {
+                font-size: 33px;
+                margin-bottom: 50px;
+              }
+
+            }
+          }
+        }
+      }
+    }
+
+    .map-wrap {
+      width: 100%;
+      @include flexbox;
+      align-items: flex-start;
+      flex-direction: column-reverse;
+      overflow: hidden;
+
+      .info-wrap {
+        display: none;
+
+        @include mobile {
+          display: block;
+        }
+
+        @include tabletToMobile {
+          display: block;
+        }
+
+        @include tablet {
+          display: block;
+        }
+
+        p {
+          font-size: $smfont;
+          line-height: 2;
+          margin: 50px 0;
+
+          span {
+            @include mobile {
+              display: block;
+            }
+          }
+        }
+
+        .more {
+          width: 220px;
+
+          span {
+            width: 160px;
+          }
+        }
+      }
+
+      .map {
+        @include flexbox;
+        align-items: start;
+        flex-direction: column;
+        width: $w;
+
+        #map {
+          box-shadow: -5px -5px 15px 34px rgba($color: #131313, $alpha: 0.08);
+          background-position: center;
+          width: 100%;
+          height: 400px;
+
+
+          @include mobile {
+            height: 200px;
+          }
+
+          @include tabletToMobile {
+            height: 400px;
+          }
+
+          @include tablet {
+            height: 450px;
+          }
+
+          @include laptopToTablet {
+            height: 430px;
+          }
+
+          @include laptop {
+            height: 510px;
+          }
+
+          @include desktop {
+            height: 550px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* END cont4 */
+
+.footer {
+  margin-top: 0px;
+  padding-bottom: 50px;
+  border-top: 1px solid #e5e5e5;
+
+  @include laptop {
+    padding-top: 50px;
+    padding-bottom: 80px;
+  }
+
+  @include desktopToLaptop {
+    padding-top: 50px;
+    padding-bottom: 0;
+  }
+
+  @include desktop {
+    padding-top: 50px;
+    padding-bottom: 0;
+  }
+
+  .wrap {
+    @include laptop {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: start;
+    }
+
+    @include desktopToLaptop {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: start;
+    }
+
+    @include desktop {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: start;
+      width: 80%;
+    }
+
+  }
+
+  .foot-sns {
+    @include flexbox;
+    justify-content: start;
+    margin: 50px 0;
+
+    @include laptop {
+      align-items: start;
+      flex-direction: column;
+      margin: 0;
+    }
+
+    @include desktopToLaptop {
+      align-items: start;
+      flex-direction: column;
+      margin: 0;
+    }
+
+    @include desktop {
+      align-items: start;
+      flex-direction: column;
+      margin: 0;
+      margin-right: 20px;
+    }
+
+    li {
+      text-transform: capitalize;
+      font-weight: 700;
+      margin: 0 8px;
+
+      @include laptop {
+        font-size: 17px;
+        line-height: 2.2;
+      }
+
+      @include desktopToLaptop {
+        font-size: 17px;
+        line-height: 2.2;
+      }
+
+      @include desktop {
+        font-size: 17px;
+        line-height: 2.2;
+      }
+    }
+  }
+
+  p {
+    font-size: $smfont;
+
+    @include laptop {
+      font-size: 17px;
+      line-height: 2.2;
+    }
+
+    @include desktopToLaptop {
+      font-size: 17px;
+      line-height: 2.2;
+    }
+
+    @include desktop {
+      font-size: 17px;
+      line-height: 2.2;
+      margin-right: 20px;
+    }
+
+
+    span {
+      @include laptop {
+        display: block;
+      }
+
+      @include desktopToLaptop {
+        display: block;
+      }
+
+      @include desktop {
+        display: block;
+      }
+    }
+
+    strong {
+      font-weight: 700;
+      margin: 0 3px;
+
+
+      @include laptop {
+        margin: 0;
+      }
+
+      @include desktopToLaptop {
+        margin: 0;
+      }
+
+      @include desktop {
+        margin: 0;
+      }
+    }
+  }
+
+  .adress {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+
+    @include laptop {
+      margin: 0;
+      width: 31%;
+    }
+
+    @include desktopToLaptop {
+      margin: 0;
+      width: 30%;
+    }
+
+    @include desktop {
+      margin: 0;
+      margin-right: 20px;
+    }
+
+
+    li {
+      display: flex;
+      margin-bottom: 15px;
+
+      @include mobile {
+        font-size: 13px;
+      }
+
+      @include tabletToMobile {
+        font-size: 13px;
+      }
+
+      @include laptop {
+        line-height: 2.2;
+        margin: 0;
+        font-size: 15px;
+      }
+
+      @include desktop {
+        margin-bottom: 30px;
+      }
+
+      strong {
+        font-weight: 700;
+        display: inline-block;
+        width: 60px;
+        margin-right: 35px;
+
+        @include mobile {
+          margin-right: 10px;
+        }
+
+        @include tabletToMobile {
+          margin-right: 10px;
+        }
+
+      }
+
+      &:nth-child(2) {
+        span {
+          text-transform: lowercase;
+        }
+      }
+
+      .contact {
+        li {
+          @include desktopToLaptop {
+            line-height: 1.8;
+          }
+
+          &:nth-child(2),
+          &:nth-child(3),
+          &:nth-child(4) {
+            @include laptop {
+              display: none;
+            }
+          }
+
+          &:nth-child(2),
+          &:nth-child(3),
+          &:nth-child(4) {
+            @include desktopToLaptop {
+              display: none;
+            }
+          }
+
+          &:nth-child(2),
+          &:nth-child(3),
+          &:nth-child(4) {
+            @include desktop {
+              display: none;
+            }
+          }
+
+        }
+      }
+    }
+
+    &:nth-of-type(2) {
+      display: none;
+
+      @include laptop {
+        display: flex;
+      }
+
+      @include desktopToLaptop {
+        display: flex;
+      }
+
+      @include desktop {
+        display: flex;
+      }
+    }
+  }
+
+}

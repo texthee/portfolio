@@ -1,0 +1,96 @@
+@import 'variables';
+
+@mixin bg-name($name, $path, $format: "jpg") {
+  background-image: url("#{$path}#{$name}.#{$format}");
+}
+
+@mixin bg {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+
+@mixin blind {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  white-space: nowrap;
+  clip: rect(0, 0, 0, 0);
+}
+
+@mixin flexbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin inlineflexbox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin center {
+  width: 100%;
+  margin: 0 auto;
+}
+
+@mixin snshover {
+  background-color: $maincolor;
+  border-radius: 100%;
+}
+
+
+// 320 ~ 535
+@mixin mobile {
+  @media all and (min-width: #{$breakpoint-mobile}) and (max-width: #{$breakpoint-tabletToMobile}) {
+    @content;
+  }
+}
+
+// 535 ~ 720
+@mixin tabletToMobile {
+  @media all and (min-width: #{$breakpoint-tabletToMobile}) and (max-width: #{$breakpoint-tablet}) {
+    @content;
+  }
+}
+
+// 720 ~ 960
+@mixin tablet {
+  @media all and (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-laptopToTablet}) {
+    @content;
+  }
+}
+
+// 960 ~ 1024
+@mixin laptopToTablet {
+  @media all and (min-width: #{$breakpoint-laptopToTablet}) and (max-width: #{$breakpoint-laptop}) {
+    @content;
+  }
+}
+
+// 1024 ~ 1500
+@mixin laptop {
+  @media (min-width: #{$breakpoint-laptop}) and (max-width: #{$breakpoint-desktopToLaptop}) {
+    @content;
+  }
+}
+
+// 1500 ~ 1800
+@mixin desktopToLaptop {
+  @media (min-width: #{$breakpoint-desktopToLaptop}) and (max-width: #{$breakpoint-desktop}) {
+    @content;
+  }
+}
+
+// 1800 ~ 
+@mixin desktop {
+  @media all and (min-width: #{$breakpoint-desktop}) {
+    @content;
+  }
+}

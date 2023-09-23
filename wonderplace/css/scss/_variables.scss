@@ -1,0 +1,29 @@
+$w: 100%;
+$h: 100%;
+$maincolor : #131313;
+$b : 1px solid red;
+$m: 100px;
+$smfont: 14px;
+$mfont : 20px;
+$lfont: 30px;
+
+// 모바일
+$breakpoint-mobile: 320px;
+
+// 모바일에서 태블릿
+$breakpoint-tabletToMobile: 535px;
+
+// 태블릿
+$breakpoint-tablet: 720px;
+
+// 태블릿에서 노트북
+$breakpoint-laptopToTablet: 960px;
+
+// 노트북
+$breakpoint-laptop: 1024px;
+
+// 노트북에서 데스크탑
+$breakpoint-desktopToLaptop: 1500px;
+
+// 데스크탑
+$breakpoint-desktop: 1800px;

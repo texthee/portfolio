@@ -1,0 +1,213 @@
+    .wrapper{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        height:30vh;
+        width:90vw;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+    .swiper-container {
+        position:relative;
+        width: 85vw;
+        /* height: 300px; */
+    }
+    .swiper-container > .swiper-slide__content {
+        position:absolute;
+        top:0;
+    }
+    
+    .swiper-slide {
+        height: 300px;
+        display:flex;
+        /* background: #eee; */
+        align-items: center;
+        justify-content:center;
+        transition:all 200ms linear;
+        transform: scale(0.8);
+        /* 기존의 크기를 작게 해 두고 */
+    }
+    .swiper-slide img{
+        max-width: 100%;
+    }
+    .swiper-slide-active{
+        transform: scale(1);
+        /* 활성된 애를 다시 크게 확대하는 원리 */
+        /* swiper-slide-avtive가 활성된 슬라이드를 나타냄 */
+    }
+    .swiper-slide__content {
+        height: 300px;
+    }
+    .swiper-pagination{
+        position: relative;
+        bottom:-200px;
+        /* 슬라이드 페이지 번호를 원하는 위치를 이동하면 됨, 좌우 버튼도 마찬가지 방법임 */
+    }
+    div.swiper-button-prev{color: #000; z-index: 1; display: none;}
+    div.swiper-button-next{color: #000; z-index: 1; display: none;}
+    
+
+@media screen and (min-width:768px){ 
+.wrapper{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:45vh;
+    width:90vw;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.swiper-container {
+    position:relative;
+    width: 90vw;
+    /* height: 300px; */
+}
+.swiper-container > .swiper-slide__content {
+    position:absolute;
+    top:0;
+}
+
+.swiper-slide {
+    height: 300px;
+    display:flex;
+    /* background: #eee; */
+    align-items: center;
+    justify-content:center;
+    transition:all 200ms linear;
+    transform: scale(0.8);
+    /* 기존의 크기를 작게 해 두고 */
+}
+.swiper-slide img{
+    max-width: 100%;
+}
+.swiper-slide-active{
+    transform: scale(1);
+    /* 활성된 애를 다시 크게 확대하는 원리 */
+    /* swiper-slide-avtive가 활성된 슬라이드를 나타냄 */
+}
+.swiper-slide__content {
+    height: 300px;
+}
+.swiper-pagination{
+    position: relative;
+    bottom:-200px;
+    /* 슬라이드 페이지 번호를 원하는 위치를 이동하면 됨, 좌우 버튼도 마찬가지 방법임 */
+}
+div.swiper-button-prev{color: #000; z-index: 1; display: none}
+div.swiper-button-next{color: #000; z-index: 1; display: none}
+
+}
+
+
+
+@media screen and (min-width:768px){ 
+.wrapper{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:45vh;
+    width:90vw;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.swiper-container {
+    position:relative;
+    width: 90vw;
+    /* height: 300px; */
+}
+.swiper-container > .swiper-slide__content {
+    position:absolute;
+    top:0;
+}
+
+.swiper-slide {
+    height: 300px;
+    display:flex;
+    /* background: #eee; */
+    align-items: center;
+    justify-content:center;
+    transition:all 200ms linear;
+    transform: scale(0.8);
+    /* 기존의 크기를 작게 해 두고 */
+}
+.swiper-slide img{
+    max-width: 100%;
+}
+.swiper-slide-active{
+    transform: scale(1);
+    /* 활성된 애를 다시 크게 확대하는 원리 */
+    /* swiper-slide-avtive가 활성된 슬라이드를 나타냄 */
+}
+.swiper-slide__content {
+    height: 300px;
+}
+.swiper-pagination{
+    position: relative;
+    bottom:-200px;
+    /* 슬라이드 페이지 번호를 원하는 위치를 이동하면 됨, 좌우 버튼도 마찬가지 방법임 */
+}
+div.swiper-button-prev{color: #ddd; z-index: 1; display: block;}
+div.swiper-button-next{color: #ddd; z-index: 1; display: block;}
+}
+
+
+
+@media screen and (min-width:1024px){ 
+    .wrapper{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        height:90vh;
+        width:90vw;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+    .swiper-container {
+        position:relative;
+        width: 90vw;
+        /* height: 300px; */
+    }
+    .swiper-container > .swiper-slide__content {
+        position:absolute;
+        top:0;
+    }
+    
+    .swiper-slide {
+        height: 300px;
+        display:flex;
+        /* background: #eee; */
+        align-items: center;
+        justify-content:center;
+        transition:all 200ms linear;
+        transform: scale(0.8);
+        /* 기존의 크기를 작게 해 두고 */
+    }
+    .swiper-slide img{
+        max-width: 100%;
+    }
+    .swiper-slide-active{
+        transform: scale(1);
+        /* 활성된 애를 다시 크게 확대하는 원리 */
+        /* swiper-slide-avtive가 활성된 슬라이드를 나타냄 */
+    }
+    .swiper-slide__content {
+        height: 300px;
+    }
+    .swiper-pagination{
+        position: relative;
+        bottom:-200px;
+        /* 슬라이드 페이지 번호를 원하는 위치를 이동하면 됨, 좌우 버튼도 마찬가지 방법임 */
+    }
+    div.swiper-button-prev{color: #ddd; z-index: 1; display: block}
+    div.swiper-button-next{color: #ddd; z-index: 1; display: block}    
+
+
+    div.swiper-button-prev:hover{color: #000;}
+    div.swiper-button-next:hover{color: #000;}
+
+
+    }
+    
+    
+    
+
